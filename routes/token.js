@@ -24,7 +24,8 @@ router.get('/:username/:game', function (req, res) {
             username: username,
             game: game
         });
-      newToken.save(function (err, obj) {
+
+        newToken.save(function (err, obj) {
             res.send({token: obj._id.toString()});
         });
     });

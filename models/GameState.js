@@ -4,6 +4,7 @@ var gameStateSchema = new mongoose.Schema({
     token: String,
     game: String,
     username: String,
+    // Custom stateful data for a specific game
     data: {}
 });
 

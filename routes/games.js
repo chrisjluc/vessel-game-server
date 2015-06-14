@@ -3,6 +3,7 @@ var router = express.Router();
 
 var Token = require('../models/Token');
 var GameState = require('../models/GameState');
+
 var gameController = require('../controllers/gamecontroller');
 
 // This can be called when a user is just starting a game, no command required

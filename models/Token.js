@@ -6,7 +6,7 @@ var tokenSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         expires: '1h',
-        default: new Date()
+        default: Date.now
     }
 });
 

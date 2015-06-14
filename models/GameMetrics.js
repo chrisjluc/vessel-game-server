@@ -5,6 +5,7 @@ var gameMetrics = new mongoose.Schema({
         type: String,
         unique: true
     },
+    // keys will be the game with wins, losses, totals
     data: {}
 });
 

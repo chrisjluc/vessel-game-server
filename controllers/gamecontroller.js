@@ -28,12 +28,12 @@ var gameController = {
     },
 
     /*
-     * Handles every command for gameplay
+     * Handles every command for game play
      * Maps to the specific game calls it's play()
      *
      * If the player wins or loses,
-     * the specifc game's play() will call the callbacks
-     * and then gamestate is deleted.
+     * game should call one of the win/lose callbacks
+     * and then game state is deleted.
      */
     play: function (state, command, res){
         var game = require('../games/' + state.game);

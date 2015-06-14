@@ -38,19 +38,20 @@ var hangman = {
 
         res.send({
             instructions: 'Welcome to Hangman! ' +
-                'To make a guess input a letter as a command. You have '
+                'To make a guess, input a letter as a command. You have '
                 + guessesToStart + ' guesses.',
             hangmanString: printHangmanString(data)
         });
     },
 
     play: function(state, command, winCallback, loseCallback, res) {
+        command = command.toLowerCase();
+
         if (!isLetter(command)) return res.send({message: 'Command has to be a single letter'});
 
         var data = state.data;
         if (_.contains(data.lettersGuessed, command)) return res.send({message: 'That letter was already guessed'});
 
-        command = command.toLowerCase();
         data.lettersGuessed.push(command);
 
         var index = data.lettersLeft.indexOf(command);
