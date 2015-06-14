@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
 
 var gameStateSchema = new mongoose.Schema({
-    tokenId: String,
-    gameId: String,
-    isFinished: Boolean,
-    isStarted: Boolean,
+    token: String,
+    game: String,
+    username: String,
     data: {}
 });
 

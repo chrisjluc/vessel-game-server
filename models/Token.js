@@ -1,16 +1,16 @@
 var mongoose = require('mongoose');
 
 var tokenSchema = new mongoose.Schema({
-    tokenId : {
-        type: String,
-        unique: true
-    },
     username: String,
+    game: String,
     createdAt: {
         type: Date,
-        expires: '1h'
+        expires: '1h',
+        default: new Date()
     }
 });
+
+tokenSchema.index({ username: 1, game: 1}, { unique: true });
 
 var Token = mongoose.model('token', tokenSchema);
 
